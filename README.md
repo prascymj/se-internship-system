@@ -16,9 +16,9 @@ This site collects the English documentation so students can understand the inte
 2. **Propose a host company & present** — the student proposes a company and books a presentation with their academic advisor. If not approved, they find a new company and present again.
 3. **Check training eligibility** — the student must complete the required training sessions and upload a certificate for each.
 4. **Upload acceptance documents** — three letters: the Request Letter, the Acceptance Letter, and the Referral (Placement) Letter.
-5. **On-site supervision (4 months)** — the student pins the host company on Google Map; the Internship Coordinator assigns one Supervising Instructor per company by route group; supervision can be **online or on-site**; instructors score using a form/rubric and an interview.
+5. **On-site supervision (3 months)** — the student pins the host company on Google Map; the Internship Coordinator assigns one Supervising Instructor per company by route group; supervision can be **online or on-site**; instructors score using a form/rubric and an interview.
 6. **Confirm with the core system** — the student confirms they have logged their tasks in the existing core internship system.
-7. **Completion & thank-you letter** — when the internship ends, a Thank-you Letter to the host company is generated.
+7. **Completion & thank-you letter** — when the internship ends, a Thank-you Letter to the host company is generated. When the host company's evaluation of the student is recorded as complete, the student is notified.
 8. **Problem handling** — if a student is returned/dismissed mid-internship, it is recorded and they find a new placement; at-risk cases are tracked with the actions taken.
 
 ---

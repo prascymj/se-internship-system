@@ -55,6 +55,7 @@ A summary of all FR/NFR of the project, compiled from every document in `01-spec
 | FR-28 | Display the history/timeline of problem cases | [spec](./spec.md) | Backlog |
 | FR-29 | Notify about the presentation/supervision due date | [spec](./spec.md) | Backlog |
 | FR-31 | Policy for the notification lead time (adjustable) | [spec](./spec.md) | Backlog |
+| FR-35 | Notify the student when the host company evaluation is completed (new 2026-09-17) | [spec](./spec.md) | Backlog |
 
 ## Priority: Low
 

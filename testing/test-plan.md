@@ -27,7 +27,7 @@ Must have, feature 10 = Should have):
 | 9 | [Record and track problem cases during the internship](../design/feature-list.md) | Must have |
 | 10 | [Notify proposal presentation and supervision schedules](../design/feature-list.md) | Should have |
 
-This covers all of FR-01–FR-20, FR-22–FR-29, FR-31–FR-34 and NFR-01–NFR-07 (FR-21, FR-30 =
+This covers all of FR-01–FR-20, FR-22–FR-29, FR-31–FR-35 and NFR-01–NFR-07 (FR-21, FR-30 =
 Deprecated since 2026-09-16, so they are no longer in the test scope — see details in
 [backlog](../requirements/backlog.md)).
 
@@ -53,7 +53,7 @@ Deprecated since 2026-09-16, so they are no longer in the test scope — see det
 | Group D (FR-11–FR-15) | Feature 4 | Functional Testing — document upload/notification |
 | Group E (FR-16–FR-20, FR-32–FR-34; FR-21, FR-30 = Deprecated) | Features 5, 6 | Functional Testing — map / 1:1 supervising instructor assignment by route group (FR-32) / confirm before replacing an existing assignment (FR-34) / setting the online–on-site supervision mode per session (FR-33) / scoring and interview |
 | Group F (FR-22–FR-23) | Feature 7 | Functional Testing — self-declare confirmation |
-| Group G (FR-24–FR-25) | Feature 8 | Functional Testing — automatic status change / document generation from a template |
+| Group G (FR-24–FR-25, FR-35) | Feature 8 | Functional Testing — automatic status change / document generation from a template / notify the student when the host company evaluation is completed (FR-35 — a parallel milestone that does not block the status change) |
 | Group H (FR-26–FR-28) | Feature 9 | Functional Testing — problem-case recording / timeline |
 | Group I (FR-29, FR-31) | Feature 10 | Functional Testing — scheduled notifications / configurable advance lead-time policy |
 
@@ -124,11 +124,11 @@ Test according to the system's real user roles (reference
 | 5 | Pin host companies, plan routes, and assign supervising instructors | [company-map-pinning](./test-cases/company-map-pinning.md) | 11 (FR-16 ×2, FR-17, FR-32 ×2, FR-34 ×4, NFR-02 ×1, NFR-04) |
 | 6 | Score and record interview results during supervision | [supervision-scoring](./test-cases/supervision-scoring.md) | 13 (FR-18 ×2, FR-19 ×2, FR-20 ×2, FR-33 ×3, NFR-03, NFR-07 ×3; FR-21/FR-30 = Deprecated, not counted) |
 | 7 | Confirm data entry with the existing core internship system | [main-system-confirmation](./test-cases/main-system-confirmation.md) | 3 (FR-22, FR-23, NFR-02) |
-| 8 | Internship completion and thank-you letter to the host company | [internship-completion](./test-cases/internship-completion.md) | 4 (FR-24, FR-25, NFR-02, NFR-05) |
+| 8 | Internship completion and thank-you letter to the host company | [internship-completion](./test-cases/internship-completion.md) | 6 (FR-24, FR-25, FR-35 ×2, NFR-02, NFR-05) |
 | 9 | Record and track problem cases during the internship | [problem-case-tracking](./test-cases/problem-case-tracking.md) | 5 (FR-26 ×2, FR-27, FR-28, NFR-02) |
 | 10 | Notify proposal presentation and supervision schedules | [schedule-notifications](./test-cases/schedule-notifications.md) | 4 (FR-29 ×2, FR-31 ×2) |
 
-A total of 72 ACs cover FR-01–FR-20, FR-22–FR-29, FR-31–FR-34 and NFR-01–NFR-07, every active code
+A total of 74 ACs cover FR-01–FR-20, FR-22–FR-29, FR-31–FR-35 and NFR-01–NFR-07, every active code
 (FR-21, FR-30 = Deprecated since 2026-09-16, no longer counted in this total — see *(Deprecated —
 FR-21/FR-30, removed from scope)*). (For the details of each AC, see
 [acceptance-criteria](./acceptance-criteria.md).)

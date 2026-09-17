@@ -8,7 +8,7 @@
 This project aims to develop a system that supports the student internship process — from announcing/tracking
 status by semester, submitting proposed host companies and requesting approval from the advisor, checking
 eligibility before starting the internship, managing acceptance documents, the supervision process during the
-4-month internship, through to post-internship documents and recording problem cases that may arise along the way.
+3-month internship, through to post-internship documents and recording problem cases that may arise along the way.
 
 **Important:** There is currently an "existing core internship system" that students use to log their daily tasks
 during the internship, and that host companies use to view progress. The system planned in this document **does not
@@ -23,7 +23,7 @@ students self-confirm (see Assumption 3 and FR-22–FR-23).
 - Submitting proposed host companies, scheduling and recording the results of the proposal presentation with the advisor, and iterating when it does not pass
 - Checking eligibility with respect to attending pre-internship training and uploading evidence (certificate)
 - Uploading and tracking the 3 internship acceptance documents (Request Letter / Acceptance Letter / Referral (Placement) Letter)
-- The supervision process during the 4-month internship: pinning the host company on Google Map, grouping supervision
+- The supervision process during the 3-month internship: pinning the host company on Google Map, grouping supervision
   routes and assigning a Supervising Instructor **1 per company** according to the route group they are responsible for
   (updated 2026-09-16 — see Section 9), scoring per the scoring form/rubric and interview form, where each supervision
   round can be specified as being **online or on-site**
@@ -77,6 +77,16 @@ user before being carried forward to the design stage**:
    notification should be sent before the due date, the user answered "not sure," so the recommended default of
    **7 days** is used (adjustable by staff, following the same approach as FR-08). This value is **not yet a final
    conclusion**; the user must confirm/adjust it again before it is used in actual design/development.
+7. **Who records the host company evaluation result in this system (FR-35, added 2026-09-17):** The raw requirement
+   states that "the host company has finished evaluating the student's internship," but it is not yet confirmed whether
+   this system directly receives the evaluation result as input from the host company (e.g., a form/link for the host
+   company to fill in itself) or whether it is merely a milestone triggered by a record made by the staff/Academic
+   Advisor instead (similar to the self-declare approach of FR-22/FR-23). This document assumes for now that this
+   milestone is triggered by the staff/Academic Advisor recording it on behalf of the host company, since the host
+   company is not yet defined as a user with an account in this system per the original scope (see Section 3, Roles).
+   The detailed host company evaluation form/scores are not yet in scope of this system (they may reside in the existing
+   core internship system or in a process external to the system). **This must be confirmed with the user before
+   proceeding to the next design stage.**
 > **Note (2026-09-16, after confirmation):** The former Assumption 7 (the status of FR-21/FR-30 after adjusting FR-18
 > to "1 Supervising Instructor per company") has been answered by the user: to **cancel both FR-21 and FR-30**. It is
 > therefore removed from the list of assumptions to review — see the full decision details at
@@ -119,7 +129,7 @@ user before being carried forward to the design stage**:
 | FR-14 | Track the completeness of all 3 documents | The system displays the status of whether all 3 documents are complete, and which one is still missing | High |
 | FR-15 | Notify about missing documents | The system notifies the student/staff when documents are still incomplete and the due date is approaching | Medium |
 
-### Group E: Supervision process during the 4-month internship (FR-16–FR-20, FR-32–FR-34; FR-21, FR-30 = Deprecated)
+### Group E: Supervision process during the 3-month internship (FR-16–FR-20, FR-32–FR-34; FR-21, FR-30 = Deprecated)
 
 | Code | Requirement | Details | Priority |
 |---|---|---|---|
@@ -141,12 +151,13 @@ user before being carried forward to the design stage**:
 | FR-22 | Confirm data recording in the existing core internship system | The student self-declares that they have recorded their daily tasks/data in the existing core internship system (see Assumption 2) | High |
 | FR-23 | Update status upon confirmation | The system updates the student's overall status when the confirmation per FR-22 is received | High |
 
-### Group G: Ending and post-internship (FR-24–FR-25)
+### Group G: Ending and post-internship (FR-24–FR-25, FR-35)
 
 | Code | Requirement | Details | Priority |
 |---|---|---|---|
-| FR-24 | Change status when the internship ends | The system changes the student's status to "internship ended" when the 4-month period is complete per plan | High |
+| FR-24 | Change status when the internship ends | The system changes the student's status to "internship ended" when the 3-month period is complete per plan | High |
 | FR-25 | Generate the Thank-you Letter to the host company | The system generates the Thank-you Letter to the host company (no signature) from a template, pulling the student/host company data recorded in the system, after the internship is finished | High |
+| FR-35 | Notify the student when the host company evaluation is completed (new 2026-09-17) | When the host company finishes evaluating the student's internship, the system must notify the student that the host company evaluation is complete (milestone: Workplace Evaluation Completed → Student Notified). It is a milestone in the internship-ending phase, running in parallel with FR-24 (status change to ended) and FR-25 (Thank-you Letter). **Note:** the "host company evaluation" is input from the host company, a separate matter from the scoring by the Supervising Instructor (FR-18–FR-20); this system focuses only on the milestone and the notification, while who actually fills in/records the evaluation result in this system is still an assumption to be confirmed (see Assumption 7) | Medium |
 
 ### Group H: Problem cases during the internship (FR-26–FR-28)
 
@@ -254,6 +265,24 @@ that the system must have the authorized user confirm/cancel the existing assign
 be assigned (not rejecting immediately, and not replacing automatically). Therefore **FR-34** was added, building on
 FR-18/FR-32 in Group E (full details are in the Group E table above), linked to NFR-02 (audit) for recording the history
 of the change of responsible person.
+
+## 11. Extension: Adjust the internship duration to 3 months and add FR-35, notification of the host company evaluation result (added 2026-09-17)
+
+The user requested 2 additional updates to the requirement in this round:
+
+| Change | Details |
+|---|---|
+| Fix the internship duration | Change from "4 months" to "3 months" at every point referenced in this document (introduction, scope, Group E heading, FR-24). This is a value change, not a new code |
+| Add FR-35 (new) | Notify the student when the host company finishes evaluating the internship (Workplace Evaluation Completed → Student Notified) — a milestone in Group G, paired with FR-24/FR-25 — priority **Medium** |
+
+**Rationale for setting FR-35's priority to "Medium":** FR-35 is a milestone notification to inform the student, not a
+gate that blocks the internship-ending status change (the status change is still the responsibility of FR-24, which is
+tied to the completion of the time period, not tied to the result of this notification). It is therefore comparable to
+the other milestone notifications in Group I (FR-29/FR-31), which are classified as "Medium," rather than being a "High"
+gate-level requirement that must be in the MVP.
+
+**New assumption added:** see Assumption 7 in Section 4 — the matter of who records the host company evaluation result in
+this system is not yet confirmed and must be reviewed before proceeding to the next design stage.
 
 ## Related documents
 

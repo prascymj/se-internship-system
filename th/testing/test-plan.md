@@ -25,7 +25,7 @@ Should have):
 | 9 | [บันทึกและติดตามกรณีปัญหาระหว่างฝึกงาน](../design/feature-list.md) | Must have |
 | 10 | [แจ้งเตือนกำหนดการนำเสนอและนิเทศ](../design/feature-list.md) | Should have |
 
-รวม FR-01–FR-20, FR-22–FR-29, FR-31–FR-34 และ NFR-01–NFR-07 ทั้งหมด (FR-21, FR-30 = Deprecated
+รวม FR-01–FR-20, FR-22–FR-29, FR-31–FR-35 และ NFR-01–NFR-07 ทั้งหมด (FR-21, FR-30 = Deprecated
 ตั้งแต่ 2026-09-16 จึงไม่อยู่ในขอบเขตการทดสอบอีกต่อไป — ดูรายละเอียดที่ [backlog](../requirements/backlog.md))
 
 ### นอกขอบเขต (ตาม [spec หัวข้อ 2](../requirements/spec.md))
@@ -50,7 +50,7 @@ Should have):
 | กลุ่ม D (FR-11–FR-15) | ฟีเจอร์ 4 | Functional Testing — การอัปโหลดเอกสาร/การแจ้งเตือน |
 | กลุ่ม E (FR-16–FR-20, FR-32–FR-34; FR-21, FR-30 = Deprecated) | ฟีเจอร์ 5, 6 | Functional Testing — แผนที่/มอบหมายอาจารย์นิเทศ 1:1 ตามกลุ่มเส้นทาง (FR-32)/ยืนยันก่อนแทนที่การมอบหมายเดิม (FR-34)/การกำหนดรูปแบบนิเทศ online-onsite ต่อครั้ง (FR-33)/การให้คะแนน-สัมภาษณ์ |
 | กลุ่ม F (FR-22–FR-23) | ฟีเจอร์ 7 | Functional Testing — self-declare confirmation |
-| กลุ่ม G (FR-24–FR-25) | ฟีเจอร์ 8 | Functional Testing — เปลี่ยนสถานะอัตโนมัติ/สร้างเอกสารจากแม่แบบ |
+| กลุ่ม G (FR-24–FR-25, FR-35) | ฟีเจอร์ 8 | Functional Testing — เปลี่ยนสถานะอัตโนมัติ/สร้างเอกสารจากแม่แบบ/แจ้งเตือนนักศึกษาเมื่อสถานประกอบการประเมินผลเสร็จสิ้น (FR-35 — milestone คู่ขนาน ไม่ block การเปลี่ยนสถานะ) |
 | กลุ่ม H (FR-26–FR-28) | ฟีเจอร์ 9 | Functional Testing — บันทึกกรณีปัญหา/ไทม์ไลน์ |
 | กลุ่ม I (FR-29, FR-31) | ฟีเจอร์ 10 | Functional Testing — การแจ้งเตือนตามกำหนดเวลา/นโยบายเวลาล่วงหน้าที่ปรับได้ |
 
@@ -118,11 +118,11 @@ browser/OS, ฐานข้อมูลทดสอบ, CI pipeline) ได้�
 | 5 | ปักหมุดสถานประกอบการ วางแผนเส้นทาง และมอบหมายอาจารย์นิเทศ | [company-map-pinning](./test-cases/company-map-pinning.md) | 11 (FR-16 ×2, FR-17, FR-32 ×2, FR-34 ×4, NFR-02 ×1, NFR-04) |
 | 6 | ให้คะแนนและบันทึกผลสัมภาษณ์ระหว่างนิเทศ | [supervision-scoring](./test-cases/supervision-scoring.md) | 13 (FR-18 ×2, FR-19 ×2, FR-20 ×2, FR-33 ×3, NFR-03, NFR-07 ×3; FR-21/FR-30 = Deprecated ไม่นับรวม) |
 | 7 | ยืนยันการบันทึกข้อมูลกับระบบ internship หลัก | [main-system-confirmation](./test-cases/main-system-confirmation.md) | 3 (FR-22, FR-23, NFR-02) |
-| 8 | สิ้นสุดการฝึกงานและเอกสารขอบคุณสถานประกอบการ | [internship-completion](./test-cases/internship-completion.md) | 4 (FR-24, FR-25, NFR-02, NFR-05) |
+| 8 | สิ้นสุดการฝึกงานและเอกสารขอบคุณสถานประกอบการ | [internship-completion](./test-cases/internship-completion.md) | 6 (FR-24, FR-25, FR-35 ×2, NFR-02, NFR-05) |
 | 9 | บันทึกและติดตามกรณีปัญหาระหว่างฝึกงาน | [problem-case-tracking](./test-cases/problem-case-tracking.md) | 5 (FR-26 ×2, FR-27, FR-28, NFR-02) |
 | 10 | แจ้งเตือนกำหนดการนำเสนอและนิเทศ | [schedule-notifications](./test-cases/schedule-notifications.md) | 4 (FR-29 ×2, FR-31 ×2) |
 
-รวมทั้งหมด 72 AC ครอบคลุม FR-01–FR-20, FR-22–FR-29, FR-31–FR-34 และ NFR-01–NFR-07 ครบทุกรหัส active
+รวมทั้งหมด 74 AC ครอบคลุม FR-01–FR-20, FR-22–FR-29, FR-31–FR-35 และ NFR-01–NFR-07 ครบทุกรหัส active
 (FR-21, FR-30 = Deprecated ตั้งแต่ 2026-09-16 ไม่นับรวมในจำนวนนี้แล้ว — ดู
 *(Deprecated — FR-21/FR-30 ยกเลิกจาก scope)*) (รายละเอียดแต่ละ AC ดูที่
 [acceptance-criteria](./acceptance-criteria.md))

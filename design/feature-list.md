@@ -15,7 +15,7 @@ Groups the FR/NFR from the [backlog](../requirements/backlog.md) into features t
 | 5 | Pin host companies, plan routes, and assign Supervising Instructors | Pin locations on Google Map, help group routes, assign 1 Supervising Instructor per route group/company, with confirmation required before replacing an existing assignment | Must have | FR-16, FR-17, FR-32, FR-34, NFR-04, NFR-02 | Student, Supervising Instructor, Internship Coordinator |
 | 6 | Score and record interview results during supervision | 1 Supervising Instructor per company sets the online/on-site mode, then records scores per the rubric and the interview results | Must have | FR-18, FR-19, FR-20, FR-33, NFR-03, NFR-07 | Supervising Instructor |
 | 7 | Confirm data entry with the existing core internship system | The student self-declares that they have recorded their tasks in the existing system, and the system updates the status | Must have | FR-22, FR-23, NFR-02 | Student, Internship Coordinator |
-| 8 | End the internship and the thank-you letter to the host company | Change the status when the term is complete and auto-generate a thank-you letter from a template | Must have | FR-24, FR-25, NFR-02, NFR-05 | Internship Coordinator, Student |
+| 8 | End the internship and the thank-you letter to the host company | Change the status when the term is complete, auto-generate a thank-you letter from a template, and notify the student when the host company finishes its evaluation | Must have | FR-24, FR-25, FR-35, NFR-02, NFR-05 | Internship Coordinator, Academic Advisor, Student |
 | 9 | Record and track problem cases during the internship | Record cases of being returned/dismissed or at risk of not passing, with a per-student history timeline | Must have | FR-26, FR-27, FR-28, NFR-02 | Internship Coordinator, Supervising Instructor |
 | 10 | Notify about presentation and supervision schedules | Notify the Academic Advisor/Supervising Instructor when a schedule is approaching, per a configurable lead-time policy | Should have | FR-29, FR-31 | Academic Advisor, Supervising Instructor |
 
@@ -77,10 +77,10 @@ The student self-declares that they have recorded their daily tasks/data in the 
 
 ## 8. End the internship and the thank-you letter to the host company
 
-The system changes the student's status to "internship ended" when the planned 4-month period is complete, and generates a thank-you letter to the host company (unsigned) from a template, pulling the student/host company information recorded in the system. The generated document must conform to the official format of the university/school.
+The system changes the student's status to "internship ended" when the planned 3-month period is complete, and generates a thank-you letter to the host company (unsigned) from a template, pulling the student/host company information recorded in the system. The generated document must conform to the official format of the university/school. In addition, when the host company finishes evaluating the student's internship, the system must notify the student (milestone: Workplace Evaluation Completed → Student Notified) — another milestone in the internship-ending phase, running in parallel with the status change and the thank-you letter generation. The host company evaluation is a separate input from the Supervising Instructor's scoring, and since the host company does not yet have an account in this system, this document assumes that the Internship Coordinator/Academic Advisor records the evaluation result on behalf of the host company (this must be confirmed with the user before proceeding to the next design stage — see spec Assumption 7).
 
-- Related codes: [FR-24, FR-25](../requirements/spec.md), [NFR-02, NFR-05](../requirements/spec.md)
-- User roles: Internship Coordinator (generates the document), Student (whose status changes)
+- Related codes: [FR-24, FR-25, FR-35](../requirements/spec.md), [NFR-02, NFR-05](../requirements/spec.md)
+- User roles: Internship Coordinator (generates the document, records the evaluation result on behalf of the host company per the assumption), Academic Advisor (may be the one recording the evaluation result on behalf of the host company per the assumption), Student (whose status changes, and who is notified when the evaluation is completed)
 - Priority (MoSCoW): Must have
 
 ## 9. Record and track problem cases during the internship

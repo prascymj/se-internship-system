@@ -28,13 +28,14 @@ flowchart TD
     L{"Are all 3 documents complete (FR-14)"}
     M["Receive a notification about the still-missing documents (FR-15, FR-31)"]
     N["Pin the host company location on Google Map (FR-16)"]
-    O["Go on the internship and receive supervision from the Supervising Instructor over 4 months (FR-18)"]
+    O["Go on the internship and receive supervision from the Supervising Instructor over 3 months (FR-18)"]
     P{"Returned/dismissed during the internship or not (FR-26)"}
     Q["Record the case and change the status to must find a new internship placement (FR-26)"]
     R["Self-declare that data has been recorded in the existing core internship system (FR-22)"]
     S["System updates the status once the confirmation is received (FR-23)"]
-    T["Status changes to internship ended when 4 months are complete (FR-24)"]
+    T["Status changes to internship ended when 3 months are complete (FR-24)"]
     U["Staff generate a thank-you letter to the host company (FR-25)"]
+    V["Receive a notification when the host company finishes evaluating the internship (FR-35)"]
 
     A --> B --> C --> D
     D -->|Not approved| E
@@ -57,7 +58,7 @@ flowchart TD
     P -->|Returned/dismissed| Q
     Q --> B
     P -->|Not returned/dismissed| R
-    R --> S --> T --> U
+    R --> S --> T --> U --> V
 ```
 
 Steps:
@@ -85,14 +86,15 @@ Steps:
     - If incomplete: receive a notification about the still-missing documents, per the configurable lead-time notification policy (default 7 days), then go back to upload the missing documents (step 9) (FR-15, FR-31)
     - If complete: go to the next step
 14. Pin the host company location on Google Map ([FR-16](./feature-list.md))
-15. Go on the internship and receive supervision from the Supervising Instructor during the 4-month internship ([FR-18](./feature-list.md))
+15. Go on the internship and receive supervision from the Supervising Instructor during the 3-month internship ([FR-18](./feature-list.md))
 16. During the internship, returned/dismissed or not ([FR-26](./feature-list.md))
     - If returned/dismissed: record the case and change the status to "must find a new internship placement", then go back to submit a new host company (step 2) (FR-26)
     - If not returned/dismissed: go to the next step
 17. Self-declare that data has been recorded in the existing core internship system ([FR-22](./feature-list.md))
 18. The system updates the status once the confirmation is received (FR-23)
-19. When the planned 4 months are complete, the status changes to "internship ended" ([FR-24](./feature-list.md))
+19. When the planned 3 months are complete, the status changes to "internship ended" ([FR-24](./feature-list.md))
 20. The staff generate a thank-you letter to the host company from a template (FR-25)
+21. Receive a notification when the host company finishes evaluating the internship (milestone Workplace Evaluation Completed → Student Notified, recorded on behalf by the staff/Academic Advisor since the host company does not yet have an account in this system) ([FR-35](./feature-list.md))
 
 ## Journey: Academic Advisor — review and approve host companies and track the overview
 
@@ -227,7 +229,7 @@ Steps:
 
 ## Journey: Internship Coordinator — handle problem cases and end the internship
 
-Role: Internship Coordinator
+Role: Internship Coordinator (together with the Academic Advisor in the step of recording the evaluation result on behalf of the host company)
 
 ```mermaid
 flowchart TD
@@ -236,14 +238,15 @@ flowchart TD
     C["System updates the overall status once the confirmation is received (FR-23)"]
     D{"Was a student at risk of not passing found along the way (FR-27)"}
     E["Record the assistance details and update the problem-case timeline (FR-27, FR-28)"]
-    F["When 4 months are complete, the system changes the student status to internship ended (FR-24)"]
+    F["When 3 months are complete, the system changes the student status to internship ended (FR-24)"]
     G["Generate a thank-you letter to the host company from a template (FR-25)"]
+    H["Staff/Academic Advisor record the host company evaluation result on behalf, then the system notifies the student that the evaluation is completed (FR-35)"]
 
     A --> B --> C --> D
     D -->|Found| E
     E --> F
     D -->|Not found| F
-    F --> G
+    F --> G --> H
 ```
 
 Steps:
@@ -253,8 +256,9 @@ Steps:
 4. Was a student at risk of not passing found along the way or not (FR-27)
    - If found: record the details of the assistance carried out, and update the problem-case timeline (FR-27, FR-28)
    - If not found: go to the next step
-5. When the planned 4 months are complete, the system changes the student status to "internship ended" ([FR-24](./feature-list.md))
+5. When the planned 3 months are complete, the system changes the student status to "internship ended" ([FR-24](./feature-list.md))
 6. Generate a thank-you letter to the host company from a template (FR-25)
+7. The Internship Coordinator/Academic Advisor records the host company internship evaluation result on behalf (an assumption, since the host company does not yet have an account in this system); the system then notifies the student that the host company evaluation is completed ([FR-35](./feature-list.md))
 
 ## Related documents
 

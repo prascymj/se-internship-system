@@ -300,7 +300,7 @@ Reference: [Score and record interview results during supervision](../design/fea
 
 - **AC-1 (1:1 throughout the internship round):** Given a host company/student has been assigned a
   Supervising Instructor per [FR-32](./acceptance-criteria.md), When the responsible supervisor of
-  that host company is checked throughout the 4-month internship round, Then the system shows only one
+  that host company is checked throughout the 3-month internship round, Then the system shows only one
   responsible Supervising Instructor for that host company, with no other Supervising Instructor
   co-responsible at the same time in the same round.
 - **AC-2 (restrict recording rights to the responsible instructor only):** Given a host company has
@@ -426,7 +426,7 @@ Reference: [Internship completion and thank-you letter to the host company](../d
 
 #### FR-24 (High) — [Change status upon internship completion](../requirements/spec.md)
 
-- **AC-1:** Given the student has interned for the full 4-month planned duration, When the planned
+- **AC-1:** Given the student has interned for the full 3-month planned duration, When the planned
   completion date arrives, Then the system automatically changes that student's status to "internship
   ended".
 
@@ -436,6 +436,29 @@ Reference: [Internship completion and thank-you letter to the host company](../d
   student/host company data in the system, When the coordinator instructs the system to generate the
   thank-you letter to the host company, Then the system generates the document from a template by
   pulling the recorded student and host company data into the document, without a signature.
+
+#### FR-35 (Medium) — [Notify the student when the host company evaluation is completed (new 2026-09-17)](../requirements/spec.md)
+
+> **Note:** Per assumption 7 of the spec ([Assumption 7](../requirements/spec.md) — not yet confirmed
+> with users), this document assumes the host company does not yet have an account in this system, so
+> the Internship Coordinator/Academic Advisor records the "host company evaluation completed"
+> milestone on the host company's behalf (analogous to the self-declare approach of FR-22/FR-23). The
+> ACs below are therefore written referencing this "recording on behalf" as the milestone trigger,
+> not the host company filling in a form itself. This milestone is a notification running in parallel
+> with FR-24/FR-25, not a gate that blocks the internship-ended status change (see
+> [Section 11](../requirements/spec.md)).
+
+- **AC-1 (evaluation recorded as completed → notify the student):** Given the student has the status
+  "internship ended" (FR-24) and no host company evaluation result for that student has been recorded
+  in the system yet, When the Internship Coordinator/Academic Advisor records on the host company's
+  behalf that the host company evaluation is completed (milestone: Workplace Evaluation Completed),
+  Then the system immediately notifies that student that the host company evaluation is completed
+  (Student Notified).
+- **AC-2 (before recording — not yet notified):** Given the student has the status "internship ended"
+  (FR-24) but no one has recorded any host company evaluation result for that student in the system
+  yet, When the student opens their own status/notification list, Then the system must not show a
+  notification that the host company evaluation is completed (the student is not notified until a
+  recording per AC-1 occurs).
 
 #### NFR-02 (High) — [Audit — context of internship completion](../requirements/spec.md)
 
