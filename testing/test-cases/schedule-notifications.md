@@ -1,0 +1,17 @@
+# Test Cases — Notifications for Proposal Presentation and Supervision Schedules
+
+Step-by-step test cases for the feature [10. Notifications for Proposal Presentation and Supervision Schedules](../../design/feature-list.md), referencing the acceptance criteria in [acceptance-criteria](../acceptance-criteria.md) and the flow in [user-journey](../../design/user-journey.md).
+
+| ID | Test case name | Precondition | Steps | Expected result | AC tested | FR/NFR code | Priority |
+|---|---|---|---|---|---|---|---|
+| TC-10-01 | Notify the Academic Advisor before the proposal presentation date | The Student has a saved host company proposal presentation date (FR-04) and the current date meets the "near the due date" criterion per the advance-notification lead-time policy set in the system (FR-31) | 1. Set the test system's current date to fall within the range that meets the configured policy value<br>2. Check the notifications for the relevant Academic Advisor | The system notifies the relevant Academic Advisor that the proposal presentation date is near | [FR-29 AC-1](../acceptance-criteria.md) | FR-29 | Medium |
+| TC-10-02 | Notify the Supervising Instructor before the supervision date | There is a supervision schedule for a Student under the Supervising Instructor's care, and the current date meets the "near the due date" criterion per the advance-notification lead-time policy set in the same system (FR-31) | 1. Set the test system's current date to fall within the range that meets the configured policy value<br>2. Check the notifications for the relevant Supervising Instructor | The system notifies the relevant Supervising Instructor that the supervision schedule is near | [FR-29 AC-2](../acceptance-criteria.md) | FR-29 | Medium |
+| TC-10-03 | Use the default value of the advance-notification lead-time policy | The Internship Coordinator has never adjusted the advance-notification lead-time policy for this semester | 1. Open the advance-notification lead-time policy settings page for this semester<br>2. Check the value the system is currently using | The system uses the default value set in the system (the recommended value is 7 days) as the criterion for notifications for both the proposal presentation/supervision dates (FR-29) and the planned internship start date (FR-15) | [FR-31 AC-1](../acceptance-criteria.md) | FR-31 | Medium |
+| TC-10-04 | The Internship Coordinator adjusts the advance-notification lead-time policy to another value | The Internship Coordinator has permission to adjust the advance-notification lead-time policy for this semester | 1. The Internship Coordinator changes the advance-notification lead-time policy value from the default to another value (e.g. 10 days)<br>2. Set the test system's current date to fall within the range that meets this new value (but not yet within the original default value's range)<br>3. Check the notifications for both feature 4 (FR-15) and feature 10 (FR-29) | The system uses the value the Internship Coordinator most recently set as the criterion (not the original default) and applies the same value jointly to both FR-15 and FR-29 | [FR-31 AC-2](../acceptance-criteria.md) | FR-31 | Medium |
+
+## Related documents
+
+- [Acceptance criteria — 10. Notifications for Proposal Presentation and Supervision Schedules](../acceptance-criteria.md)
+- [Feature list — 10. Notifications for Proposal Presentation and Supervision Schedules](../../design/feature-list.md)
+- [User journey](../../design/user-journey.md)
+- [Test plan](../test-plan.md)
