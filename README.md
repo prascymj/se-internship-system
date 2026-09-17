@@ -1,6 +1,6 @@
 # Internship Management System — Documentation
 
-A software requirements and design documentation set for the **Internship Management System**, developed to support and track the student internship process at the School of Applied Digital Technology, Mae Fah Luang University (MFU).
+A software requirements and design documentation set for the **Internship Management System**, developed to support and track the student internship process at **University of Phayao**.
 
 This site collects the English documentation so students can understand the internship workflow, the roles involved, and how each stage is handled by the system.
 
